@@ -1,0 +1,109 @@
+<h1 class="text-center">Naruto TTRPG System</h1>
+<div class="3colrow">
+    <div class="col text-center">
+        <h2>Basic Stuff</h2>
+        <hr>
+        <h3>Character Name</h3>
+        <input type="text" name="attr_character_name" />
+        <h3>Pronouns</h3>
+        <input type="text" name="attr_pronouns"/>
+        <h3>Description</h3>
+        <textarea name="attr_description"></textarea>
+        <hr>
+        <h2>Stats</h2>
+        <span class="attribute">
+            <h3>Level</h3>
+            <input type="number" name="attr_level" value="1"/>
+        </span>
+        <span class="attribute">
+            <h3>Strength (STR)</h3>
+            <input type="number" name="attr_strength" value="0"/>
+        </span>
+        <span class="attribute">
+            <h3>Resolve (RES)</h3>
+            <input type="number" name="attr_resolve" value="0"/>
+        </span>
+        <span class="attribute">
+            <h3>Agility (AGL)</h3>
+            <input type="number" name="attr_agility" value="0"/>
+        </span>
+        <span class="attribute">
+            <h3>Spirit (SPR)</h3>
+            <input type="number" name="attr_spirit" value="0"/>
+        </span>
+        <span class="attribute">
+            <h3>Power (PWR)</h3>
+            <input type="number" disabled name="attr_power" value="floor((@{strength}+@{resolve})/4)"/>
+        </span>
+        <span class="attribute">
+            <h3>Skill (SKL)</h3>
+            <input type="number" disabled name="attr_skill" value="floor((@{agility}+@{spirit})/4)"/>
+        </span>
+        <hr>
+    </div>
+    <div class="col text-center">
+        <h2>Combat Statistics</h2>
+        <hr>
+        <span class="attribute">
+            <h3>Life Points</h3>            
+            <input type="number" name="attr_life_points_current" value="@{life_points_max"/> out of
+            <input type="number" name="attr_life_points_max" disabled value="(@{resolve}+@{lp_bonus})*@{level}"/>
+        </span>
+        <span class="attribute">
+            <h3>Chakra Points</h3>
+            <input type="number" name="attr_chakra_points_current" value="@{chakra_points_max"/> out of
+            <input type="number" name="attr_chakra_points_max" disabled value="(@{resolve}+@{cp_bonus})*@{level}"/>
+        </span>
+        <span class="attribute">
+            <h3>Dodge</h3>
+            <input type="number" name="attr_dodge_base" value="0"/> +
+            <input type="number" name="attr_dodge_agl_bonus" disabled value="floor(@{agility}/4)"/> =
+            <input type="number" name="attr_dodge" disabled value="@{dodge_base} + @{dodge_agl_bonus}"/>
+        </span>
+        <span class="attribute">
+            <h3>Aim</h3>
+            <input type="number" name="attr_aim_base" value="0"/> + Level =
+            <input type="number" name="attr_aim" disabled value="@{aim_base} + @{level}"/>
+        </span>
+        <span class="attribute">
+            <h3>LP Bonus</h3>
+            <input type="number" name="attr_lp_bonus" value="0"/>
+        </span>
+        <span class="attribute">
+            <h3>CP Bonus</h3>
+            <input type="number" name="attr_cp_bonus" value="0"/>
+        </span>
+        <hr>
+        <h2>Rolls</h2>
+        <button type="roll" class="button" value="&{template:default} {{name=Attack}} {{attack=[[2d6 + @{aim}]]}}" name="roll_Attack">Attack</button>
+    </div>
+    <div class="col text-center">
+        <h2>Roles</h2>
+        <hr>
+        <span class="attribute">
+            <h3>Base Role</h3>
+            <input type="text" name="attr_base_role_name"/>
+        </span>
+        <span class="attribute">
+            <h3>Description</h3>
+            <input type="text" name="attr_base_role_description" />
+        </span>
+        <span class="attribute">
+            <h3>Base Role Bonuses</h3>
+            <input type="text" name="attr_base_role_bonuses" placeholder="+2 Resolve, +1 Anything else"/>
+        </span>
+        <hr>
+        <span class="attribute">
+            <h3>Advanced Role</h3>
+            <input type="text" name="attr_advanced_role_name"/>
+        </span>
+        <span class="attribute">
+            <h3>Description</h3>
+            <input type="text" name="attr_advanced_role_description" />
+        </span>
+        <span class="attribute">
+            <h3>Advanced Role Bonuses</h3>
+            <input type="text" name="attr_advanced_role_bonuses" placeholder="+2 Resolve, +1 Anything else"/>
+        </span>
+    </div>
+</div>
