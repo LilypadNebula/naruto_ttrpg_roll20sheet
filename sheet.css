@@ -1,0 +1,21 @@
+.sheet-text-center {
+    text-align: center;
+}
+
+.sheet-width-full {
+    width: 100px;
+}
+
+.sheet-attribute {
+    margin-bottom: 5px;
+}
+
+.sheet-just_show {
+    border: none;
+    font-size: 25px;
+    background: white;
+}
+
+.sheet-hide {
+    display: none;
+}
