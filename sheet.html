@@ -50,15 +50,15 @@
             <input type="number" name="attr_life_points_max" disabled value="(@{resolve}+@{lp_bonus})*@{level}"/>
         </span>
         <span class="attribute">
-            <h3>Chakra Points</h3>
-            <input type="number" name="attr_chakra_points_current" value="@{chakra_points_max"/> out of
-            <input type="number" name="attr_chakra_points_max" disabled value="(@{resolve}+@{cp_bonus})*@{level}"/>
+            <h3>Chakra</h3>
+            <input type="number" name="attr_chakra_current" value="@{chakra_points_max"/> out of
+            <input type="number" name="attr_chakra_max" disabled value="(@{resolve}+@{cp_bonus})*@{level}"/>
         </span>
         <span class="attribute">
-            <h3>Dodge</h3>
-            <input type="number" name="attr_dodge_base" value="0"/> +
-            <input type="number" name="attr_dodge_agl_bonus" disabled value="floor(@{agility}/4)"/> =
-            <input type="number" name="attr_dodge" disabled value="@{dodge_base} + @{dodge_agl_bonus}"/>
+            <h3>Avoidance</h3>
+            <input type="number" name="attr_avoidance_base" value="0"/> +
+            <input type="number" name="attr_avoidance_agl_bonus" disabled value="floor(@{agility}/4)"/> =
+            <input type="number" name="attr_avoidance" disabled value="@{dodge_base} + @{dodge_agl_bonus}"/>
         </span>
         <span class="attribute">
             <h3>Aim</h3>
@@ -104,6 +104,13 @@
         <span class="attribute">
             <h3>Advanced Role Bonuses</h3>
             <input type="text" name="attr_advanced_role_bonuses" placeholder="+2 Resolve, +1 Anything else"/>
+        </span>
+        <hr>
+        <h2>Skills</h2>
+        <span class="attribute">
+            <h3>Skill Points</h3>
+            <input type="number" name="attr_skill_points_spent" value="0"/> out of
+            <input type="number" name="attr_skill_points_max" disabled value="@{skill} * 4 + (@{level} - 1) * 2"/>
         </span>
     </div>
 </div>
